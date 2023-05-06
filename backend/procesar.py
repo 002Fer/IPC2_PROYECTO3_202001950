@@ -5,62 +5,28 @@ import os
 from io import BytesIO
 
 
-def ObtenerListadePalabras(text):
-    text = re.sub(r'\s+', ' ', text)
-    text = re.sub(r'[^\w\s]', '', text)
-    text = re.sub(r'\b\d+\b', '', text)
-    words = text.lower().split()
-    words =EliminarPalabras(words)
-    return words
+perfilesclave={}
+lista=[]
+lista_ignorar=[]
+def ProcessData(xml):
+    if xml:
+        doc=ET.fromstring(xml)
+        perfiles=doc.findall('perfiles')
+        descartadas=doc.find('descartadas')
 
-def EliminarPalabras(lista):
-    ruta_archivo = 'diccionario.xml'
-    if os.path.exists(ruta_archivo):
-        tree = ET.parse(ruta_archivo)
-        root = tree.getroot()
-        xml_string = ET.tostring(root, encoding='utf8', method='xml').decode('utf8')
-        diccionario1=xmlADiccionario(xml_string)
-        Listaeliminar=diccionario1['eliminar']
-        for palabra in lista:
-            if palabra.lower() in [eliminar.lower() for eliminar in Listaeliminar]:
-                lista.remove(palabra)
-        return lista
-    return lista
-
-def xmlADiccionario(xml_string):
-    root = ET.fromstring(xml_string)
-    result_dict = {}
-    for categoria in root.findall('perfil'):
-        nombre = categoria.find('nombre').text
-        palabras = [p.text for p in categoria.findall('palabrasClave/palabra')]
-        result_dict[nombre] = palabras
-    return result_dict
-
-def xmlUsuario(xml_string):
-    root = ET.fromstring(xml_string)
-    result_nom = {}
-    for categoria in root.findall('perfiles'):
-        nombre = categoria.find('nombre').text
-        palabras = [p.text for p in categoria.findall('perfil/nombre')]
-        result_nom[nombre] = palabras
-    return result_nom
-
-def unificarDiccionarios(diccionario1, diccionario2):
-    keys = set(diccionario1.keys()).union(set(diccionario2.keys()))
-    nuevo_diccionario = {}
-    for key in keys:
-        valores1 = set(diccionario1.get(key, []))
-        valores2 = set(diccionario2.get(key, []))
-        nuevo_diccionario[key] = list(valores1.union(valores2))
-    return nuevo_diccionario
-
-def EscribirBasePalabras(datos):
-    root = ET.Element('categorias')
-    for key, value in datos.items():
-        head=SubElement(root,'categoria')
-        ET.SubElement(head, 'nombre').text=key
-        elemento=SubElement(head,'palabras')
-        for item in value:
-            ET.SubElement(elemento, 'palabra').text = item
-    tree = ET.ElementTree(root)
-    tree.write('diccionario.xml', encoding='utf-8', xml_declaration=True)
+        for descartar in descartadas:
+            palabradescartar=descartar.text
+            lista_ignorar.append(palabradescartar)
+        
+        for perfil in perfiles:
+            perfil1=perfil.findall('perfil')
+            for perfil2 in perfil1:
+                nomlista=perfil2.find('nombre').text
+                nom=perfil2.find('nombre').text
+                nomlista=list()
+                palabrasClave=perfil2.find('palabrasClave')
+                for palabra in palabrasClave:
+                    nombreper=palabra.text
+                    nomlista.append(palabra.text)
+                perfilesclave[nom]=nomlista
+        print(perfilesclave)

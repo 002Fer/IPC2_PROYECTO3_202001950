@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<configuracion>
+ <perfiles>
+        <perfil>
+        <nombre> deportista </nombre> 
+        <palabrasClave>
+        <palabra>fútbol</palabra>
+        <palabra>balonmano</palabra>
+        <palabra>balonmano</palabra>
+        <palabra>balompié</palabra>
+        <palabra>football</palabra>
+        <palabra>basketball</palabra>
+        <palabra>handball</palabra>
+        <palabra>estadio</palabra>
+        <palabra>selección</palabra>
+        <palabra>champions</palabra>
+        <palabra>league</palabra>
+        <palabra>tenis</palabra>
+        <palabra>natación</palabra>
+        <palabra>natación</palabra>
+        </palabrasClave>
+        </perfil>
+
+        <perfil>
+        <nombre>Cultura saludable </nombre> 
+        <palabrasClave>
+        <palabra>gimnasio</palabra>
+        <palabra>comida</palabra>
+        <palabra>saludable</palabra>
+        <palabra>ejercicio</palabra>
+        <palabra>maratón</palabra>
+        <palabra>carrera</palabra>
+        <palabra>carrera</palabra>
+        <palabra>entrenar</palabra>
+        <palabra>entrenamiento</palabra>
+        <palabra>entrenamiento</palabra>
+        <palabra>boxeo</palabra>
+        <palabra>boxeo</palabra>
+        <palabra>caminata</palabra>
+        <palabra>caminata</palabra>
+        </palabrasClave>
+        </perfil>
+
+ </perfiles>
+ <descartadas>
+    <palabra>a</palabra>
+    <palabra>un</palabra>
+    <palabra>unas</palabra>
+    <palabra>en</palabra>
+    <palabra>para</palabra>
+    <palabra>por</palabra>
+    <palabra>que</palabra>
+    <palabra>la</palabra>
+    <palabra>las</palabra>
+    <palabra>los</palabra>
+    <palabra>el</palabra>
+    <palabra>unas</palabra>
+    <palabra>si</palabra>
+    <palabra>no</palabra>
+    <palabra>sino</palabra>
+    <palabra>entre</palabra>
+    <palabra>otro</palabra>
+
+ </descartadas>
+</configuracion>

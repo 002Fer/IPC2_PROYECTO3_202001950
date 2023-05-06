@@ -6,19 +6,21 @@
    
 </head>
 <body>
-    <h1>Formulario de Canciones</h1>
-    <form method="post">
-
-        <label for="artista">Nombre perfil:</label>
-        <input type="text" id="artista" name="artista">
-        <br>
-       
-        <label for="letras">Nuevo Mensaje:</label>
-        <br>
-        <textarea id="letras" name="letras"></textarea>
-        <br>
-        <input type="submit" value="Guardar">
-    </form>
-
+    <div>    
+        <h2>Carcar archivo {{titulo}}</h2>
+        <form method="POST" enctype="multipart/form-data">
+            
+            {% csrf_token %}
+            <input type="file" name="file"/>
+            <button type="submit"> carga archivo</button>
+            
+        </form>
+        {% if respuesta %}
+        <h3>{{respuesta}} </h3>
+        {% endif %}
+    </div>
+     <h1>Ingrese el mensaje </h1>
+     <form action="POST"></form>
+   
 </body>
 </html>
