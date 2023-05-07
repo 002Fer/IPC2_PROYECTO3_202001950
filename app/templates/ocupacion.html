@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>ChapinChat</title>
- 
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/config.css' %}">
    
 </head>
 <body>
@@ -12,15 +13,26 @@
             
             {% csrf_token %}
             <input type="file" name="file"/>
-            <button type="submit"> carga archivo</button>
+            <button type="submit"> Elije un archivo de entrada</button>
             
         </form>
         {% if respuesta %}
         <h3>{{respuesta}} </h3>
         {% endif %}
     </div>
-     <h1>Ingrese el mensaje </h1>
-     <form action="POST"></form>
+    <div>
+        <br>
+        <label for="letras">Nuevo Perfil:</label>
+        <textarea id="letras" name="letras"></textarea>
+        <br>
+        <label for="letras">Nuevo Mensaje:</label>
+        <textarea id="letras" name="letras"></textarea>
+        <br>
+        <input type="submit" value="Guardar">
+        <button type="submit">Resultado</button>
+    </div>
+
+
    
 </body>
 </html>

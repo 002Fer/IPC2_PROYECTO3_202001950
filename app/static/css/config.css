@@ -1,0 +1,48 @@
+/* centramos el titulo h1 */
+h1 {
+    text-align: center;
+  }
+  
+  /* Mostraemos el titulo h2 a la derecha */
+  h2 {
+    text-align: center;
+  }
+  
+  /* mostramos el titulo h3 a la ziquierda */
+  h3 {
+    text-align: center;
+  }
+  
+  /* justificamos el texto del parrafo */
+  p {
+    text-align: justify;
+  }
+
+  div {
+    text-align: center;
+  }
+  
+  /* la caja la vamos a centrar */
+
+  
+  /* para poder ver bien el resultado en la tabla vamos a darle tambien algo de formato a la misma */
+  
+  table {
+    width: 600px; /* Ajustamos el ancho a 600 px */
+    border: 1px solid #000; /* Borde sólido y negro de 1 pixel de grosor */
+    background-color: #fff; /* Mostramos el fondo de la tabla blanco */
+    margin: auto; /* Centramos la tabla en el centro de la pantalla */
+    margin-top: 60px; /* le damos margen superior para que se vea mejor */
+  }
+  
+  th {
+    height: 45px; /* Ajustamos la altura de la celda de titulo a 45 Píxeles */
+    border-bottom: 1px dashed #ccc; /* Borde inferior del titulo de la tabla punteado y gris con un grosor de 1 px */
+    text-align: center; /* Centramos el texto del título de la tabla */
+  }
+  
+  td {
+    height: 35px; /* Ajustamos la altura de la celda del cuerpo de la tabla a 35 px */
+    text-align: left; /* Alineamos el texto de la celda a la izquierda */
+    padding-left: 10px; /* le damos un padding de 10 px a la izquierda para que no se vea el texto pegado al borde */
+  }

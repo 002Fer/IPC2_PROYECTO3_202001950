@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cargar mensaje</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/config.css' %}">
+   
+</head>
+<body>
+    <div>    
+        <h2>Carcar archivo {{titulo}}</h2>
+        <form method="POST" enctype="multipart/form-data">
+            
+            {% csrf_token %}
+            <input type="file" name="file"/>
+            <button type="submit"> carga archivo</button>
+            
+        </form>
+        {% if respuesta_2 %}
+        <h3>{{respuesta_2}} </h3>
+        {% endif %}
+    </div>
+     <h1>Encontrar Porcentaje </h1>
+     <form action="POST"></form>
+   
+</body>
+</html>

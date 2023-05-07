@@ -21,6 +21,9 @@ from app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.Welcome),
-    path('archivo/',views.perfil)
+    path('archivo/',views.perfil),
+    path('data/',views.mis_datos),
+    path('vista/', views.mensajes)
+
     
 ]
